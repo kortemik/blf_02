@@ -91,7 +91,7 @@ my_bool bloommatch(UDF_INIT *initid, UDF_ARGS *args, char* result, unsigned long
 	    return 0;
 	}
 
-        int i;
+        int i = 0;
         for (; i + 8 <= limit_a; i += 8) {
             // load 256-bit chunks of each array
             __m256i first_values = _mm256_load_si256((__m256i*) &first_array[i]);
